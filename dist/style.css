@@ -41,6 +41,30 @@ body {
     padding-left: 1.1em;
 }
 
+form {
+    display: flex;
+}
+
+.btn {
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+}
+
+.btn.create {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-right: 0.25rem;
+
+    transition: opacity 250ms ease-in;
+}
+
+.btn.create:hover {
+    opacity: 0.7;
+}
+
 .new {
     background-color: transparent;
     border: 0;
@@ -50,6 +74,7 @@ body {
     outline: none;
 
     transition: border-bottom 150ms ease in;
+    order: 2;
 
 }
 
@@ -66,11 +91,19 @@ body {
     opacity: 0.2;
 }
 
+.new.list {
+    font-size: 1.1rem;
+}
+
 .active-list {
     font-weight: 900;
     letter-spacing: 1px;
 }
 
 .todo-list {
+    --spacer: 2rem;
     grid-area: active;
+    background: var(--clr-light);
+    color: var(--clr-dark);
 }
+
