@@ -72,6 +72,17 @@ form {
     opacity: 0.7;
 }
 
+.btn.delete {
+    
+    opacity: .7;
+    font-size: 1rem;
+    transition: color 200ms;
+}
+
+.btn.delete:hover {
+    color: var(--clr-dark);
+}
+
 .new {
     background-color: transparent;
     border: 0;
@@ -79,6 +90,7 @@ form {
     border-bottom: 1px solid currentColor;
     font-size: inherit;
     outline: none;
+    padding: 0.25em;
 
     transition: border-bottom 150ms ease in;
     order: 2;
@@ -95,11 +107,20 @@ form {
 
 .new:focus::placeholder {
     color: inherit;
-    opacity: 0.2;
+    opacity: 0.15;
 }
 
 .new.list {
     font-size: 1.1rem;
+}
+
+.new::placeholder {
+    opacity: 0.4;
+}
+
+.new.task {
+    margin-bottom: 0;
+    
 }
 
 .active-list {
@@ -133,6 +154,11 @@ form {
 
 .todo-body {
     padding: var(--spacer);
+    position: relative;
+}
+
+.new-task-creator .create {
+    color: var(--clr-primary);
 }
 
 [type="checkbox"] {
@@ -198,8 +224,22 @@ form {
     height: 3px;
     background: currentColor;
     transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms ease-in-out;
 }
 
 [type="checkbox"]:checked + label::after {
     transform: scaleX(1);
+    transform-origin: left;
 }
+
+.delete-stuff {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -35px;
+    color: var(--clr-light);
+}
+
